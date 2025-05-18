@@ -15,7 +15,7 @@ const EmojiSelector: React.FC<EmojiSelectorProps> = ({
 
   return (
     <div className="mb-6">
-      <h2 className="text-lg font-medium mb-3 text-neutral-800 dark:text-neutral-950">
+      <h2 className="font-normal mb-3 text-2xl font-caveat text-gray-950 pt-2">
        How's it going?
       </h2>
 
@@ -33,8 +33,8 @@ const EmojiSelector: React.FC<EmojiSelectorProps> = ({
               className={`flex flex-col items-center justify-center p-2 rounded-lg transition-all duration-300 transform bg-white/30 dark:bg-gray-800/30 backdrop-blur-md border border-white/20 dark:border-gray-600/30 shadow-md transition
                           transition transform duration-200 ease-in-out hover:scale-110
                 ${isSelected
-                  ? 'bg-gray-100 dark:bg-gray-700 ring-2 ring-indigo-500 scale-60'
-                  : 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-60'
+                  ? 'bg-gray-700 ring-2 ring-indigo-500 scale-60'
+                  : 'bg-gray-800 hover:bg-gray-700 hover:scale-60'
                 }`}
               style={{
                 boxShadow:

@@ -5,3 +5,18 @@
 body{
   font-family: 'Pacifico', sans-serif, Arial, Helvetica, sans-serif;
 }
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.glassy-gradient {
+  background: linear-gradient(270deg, #a78bfa, #f472b6, #60a5fa);
+  background-size: 600% 600%;
+  animation: gradientMove 6s ease infinite;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}

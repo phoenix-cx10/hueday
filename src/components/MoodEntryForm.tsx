@@ -41,9 +41,9 @@ const MoodEntryForm: React.FC<MoodEntryFormProps> = ({ date }) => {
   };
 
   return (
-    <div className="bg-white/30 dark:bg-gray-900/30 backdrop-blur-md border border-white/20 dark:border-gray-700/30 rounded-xl shadow-lg p-6 transition-all duration-500 animate-fadeInScale">
+    <div className="bg-gray-900/30 backdrop-blur-md border border-gray-700/30 rounded-xl shadow-lg p-6 pt-8 transition-all duration-500 animate-fadeInScale">
 
-      <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
+      <h2 className="text-xl font-normal mb-4 tracking-wide text-white">
         {formattedDate}
       </h2>
 
@@ -56,7 +56,7 @@ const MoodEntryForm: React.FC<MoodEntryFormProps> = ({ date }) => {
         <div className="mb-6">
           <label
             htmlFor="note"
-            className="block mb-2 text-lg font-medium text-gray-800 dark:text-gray-200"
+            className="block mb-2 text-2xl font-normal font-caveat text-gray-950 pt-2"
           >
             Add a note 
           </label>
@@ -66,7 +66,8 @@ const MoodEntryForm: React.FC<MoodEntryFormProps> = ({ date }) => {
             onChange={(e) => setNote(e.target.value)}
             placeholder="Anything on your mind today ?"
             rows={4}
-            className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors duration-300"
+            className="w-full p-3 border border-gray-600 rounded-lg backdrop-blur-md bg-gray-800/30
+      shadow-lg text-gray-200 font-caveat text-xl font-normal focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors duration-300 "
           />
         </div>
 
@@ -76,8 +77,8 @@ const MoodEntryForm: React.FC<MoodEntryFormProps> = ({ date }) => {
             disabled={!selectedMood}
             className={`px-6 py-2 rounded-xl font-medium transition-all duration-300 ${
               !selectedMood
-                ? 'bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed'
-                : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg hover:shadow-lg transform hover:-translate-y-1'
+                ? 'text-gray-400 cursor-not-allowed backdrop-blur-md bg-gray-800/30 shadow-lg'
+                : 'bg-cyan-500 hover:bg-cyan-400 text-white shadow-lg hover:shadow-lg transform hover:-translate-y-1'
             }`}
           >
             {isSaved ? 'Saved!' : 'Save Mood'}
