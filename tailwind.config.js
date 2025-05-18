@@ -6,7 +6,14 @@ module.exports = {
     "./src/App.tsx"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        caveat: ['"Caveat"', 'cursive'],
+        knewave: ['"Knewave"', 'cursive'],
+        meow: ['"Meow Script"', 'cursive'],
+        pacifico: ['"Pacifico"', 'cursive'],
+      }
+    },
   },
   plugins: [],
 };
