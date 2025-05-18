@@ -86,8 +86,8 @@ const CalendarView: React.FC = () => {
                 className={`aspect-square flex flex-col items-center justify-center p-1 rounded-md text-sm font-bold transition transform duration-200 ease-in-out hover:scale-110
 
                   ${isCurrentMonth ? 'text-white' : 'text-gray-600'}
-                  ${isToday ? 'ring-2 ring-indigo-400 font-bold' : ''}
-                  ${isSelected ? 'bg-indigo-900' : ''}
+                  ${isToday ? 'ring-2 ring-white font-bold' : ''}
+                  ${isSelected ? 'bg-gray-700 text-gray-950' : ''}
                 `}
                 style={{ backgroundColor: moodColor }}
               >
