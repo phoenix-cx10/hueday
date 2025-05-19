@@ -37,7 +37,7 @@ const MoodEntryForm: React.FC<MoodEntryFormProps> = ({ date }) => {
   };
 
   return (
-    <div className="bg-gray-900/30 backdrop-blur-md border border-gray-700/30 rounded-xl shadow-lg p-6 pt-8 transition-all duration-500 animate-fadeInScale">
+    <div className="bg-gray-900/30 backdrop-blur-md border border-gray-700/30 rounded-xl shadow-lg p-6 pt-8 transition-all duration-500">
       <h2 className="text-xl pl-2 font-normal mb-4 tracking-wide text-white">
         {formattedDate}
       </h2>

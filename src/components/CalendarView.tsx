@@ -42,7 +42,7 @@ const CalendarView: React.FC = () => {
 
   return (
     <div className="flex flex-col md:flex-row md:items-start gap-6">
-      <div className="w-full md:w-1/2 p-4 rounded-2xl shadow-lg bg-gray-700/30 backdrop-blur-md border border-gray-700/30 glassy-animated">
+      <div className="w-full md:w-1/2 p-4 rounded-2xl shadow-lg bg-gray-700/30 backdrop-blur-md border border-gray-700/30 glassy-animated animate-fade-in-up">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-thin text-white pl-6">
             {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
@@ -71,7 +71,7 @@ const CalendarView: React.FC = () => {
         </div>
 
         {/* for Calendar gridview */}
-        <div className="grid grid-cols-7 gap-1">
+        <div className="grid grid-cols-7 gap-1 ">
           {calendar.map(({ date, isCurrentMonth }, idx) => {
             const iso = date.toISOString();
             const entry = getEntryByDate(iso);
@@ -99,7 +99,7 @@ const CalendarView: React.FC = () => {
         </div>
       </div> 
       {/* mood entry form */}
-      <div className="w-full md:w-1/2 p-4 rounded-2xl shadow-lg bg-gray-900/30 backdrop-blur-lg border border-gray-700/50">
+      <div className="w-full md:w-1/2 p-4 rounded-2xl shadow-lg bg-gray-900/30 backdrop-blur-lg border border-gray-700/50 animate-fade-in-up duration-500">
         <MoodEntryForm date={selectedDate.toISOString()} />
       </div>
     </div>

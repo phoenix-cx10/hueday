@@ -71,20 +71,20 @@ const StatsDisp: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="backdrop-blur-2xl bg-gray-900/50
-      shadow-md rounded-lg p-5">
+        <div className="backdrop-blur-md bg-gray-800/30
+      shadow-md rounded-lg animate-fade-in-left p-5">
           <h3 className="text-lg font-normal font-pacifico text-white mb-1">Total Entries</h3>
           <p className="text-lg font-medium font-knewave text-gray-800 pl-2">{entries.length}</p>
         </div>
 
-        <div className="backdrop-blur-2xl bg-gray-900/50
-      shadow-md rounded-lg  p-5">
+        <div className="backdrop-blur-md bg-gray-800/30
+      shadow-md rounded-lg animate-fade-in-down p-5">
           <h3 className="text-lg font-normal font-pacifico text-white mb-1">Current Streak</h3>
           <p className="text-lg font-medium font-knewave text-gray-800 pl-1">{streak} days</p>
         </div>
 
-        <div className="backdrop-blur-2xl bg-gray-900/50
-      shadow-md rounded-lg p-5">
+        <div className="backdrop-blur-md bg-gray-800/30
+      shadow-md rounded-lg animate-fade-in-right p-5">
           <h3 className="text-lg font-normal font-pacifico text-white mb-1">Most Common Mood</h3>
           <div className="flex items-center">
             <span className="mr-2 font-knewave font-normal text-lg" role="img" aria-label={mostCommonMood.label}>
@@ -97,8 +97,8 @@ const StatsDisp: React.FC = () => {
         </div>
       </div>
 
-      <div className="backdrop-blur-2xl bg-gray-900/50
-       rounded-lg shadow-md p-5">
+      <div className="backdrop-blur-xl bg-gray-800/50
+       rounded-lg shadow-md animate-fade-in-up p-5">
         <h3 className="text-lg font-normal font-pacifico text-white mb-4">Mood Distribution</h3>
         <div className="space-y-4">
           {moodCounts.map((mood) => (

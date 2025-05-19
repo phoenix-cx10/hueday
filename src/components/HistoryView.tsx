@@ -25,13 +25,13 @@ const HistoryView: React.FC = () => {
   return (
     <div className="h-full overflow-y-auto">
       <div className="mb-6 backdrop-blur-md bg-gray-800/30
-      rounded-lg shadow-md p-4 transition-colors duration-300">
+      rounded-lg shadow-md p-4 transition-colors animate-fade-in-up duration-300">
         <h2 className="text-lg font-normal font-pacifico mb-3 text-white ">Filter by mood</h2>
         
         <div className="flex flex-wrap gap-2">
         <button
           onClick={() => setFilter('all')}
-          className={`px-4 py-2 rounded-full text-md font-caveat font-semibold transition-all duration-300 ${
+          className={`px-4 py-2 rounded-full text-md font-caveat font-semibold transition-all animate-fade-in duration-300 ${
           filter === 'all'
           ? 'glassy-gradient'
           : 'backdrop-blur-md bg-white/30 dark:bg-gray-800/30 shadow-md text-gray-200 hover:text-black hover:bg-cyan-400 transition transform duration-200 ease-in-out hover:scale-110'}`}>
@@ -42,7 +42,7 @@ const HistoryView: React.FC = () => {
             <button
               key={mood}
               onClick={() => setFilter(mood.toLowerCase())}
-              className={`px-4 py-2 rounded-full text-md font-caveat font-semibold transition-colors duration-200 mood-button ${
+              className={`px-4 py-2 rounded-full text-md font-caveat font-semibold transition-colors animate-fade-in duration-200 mood-button ${
                 filter === mood.toLowerCase()
                   ? 'glassy-gradient'
                   : 'backdrop-blur-md bg-gray-800/30 shadow-md text-gray-200 hover:text-black hover:bg-cyan-400 transition transform duration-200 ease-in-out hover:scale-110'}`}>
@@ -53,7 +53,7 @@ const HistoryView: React.FC = () => {
       </div>
 
       {filtered.length === 0 ? (
-        <div className="text-center py-10 text-gray-500 dark:text-gray-400">
+        <div className="text-center py-10 text-gray-400">
           No mood entries found.
         </div>
       ) : (
@@ -61,8 +61,8 @@ const HistoryView: React.FC = () => {
           {filtered.map((entry) => (
             <div
               key={entry.id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transition-all duration-300 hover:shadow-lg 
-              backdrop-blur-2xl bg-white/20 dark:bg-gray-900/50"
+              className="bg-gray-800 rounded-lg shadow-md p-4 transition-all duration-300 hover:shadow-lg 
+              backdrop-blur-xl bg-gray-800/50 animate-zoom-in"
               style={{ borderLeft: `4px solid ${entry.mood.color}` }}>
               <div className="flex justify-between items-start ">
                 <div className="flex items-center ">

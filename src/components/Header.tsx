@@ -10,16 +10,16 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
     <header className="
       fixed top-8 left-12 right-12 z-50
       backdrop-blur-md bg-gray-800/30
-      shadow-lg rounded-2xl px-6 py-3 
+      shadow-lg rounded-2xl px-6 py-3 animate-fade-in-down
     ">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-3">
           <img
             src={logo}
             alt="Logo"
-            className="w-8 h-8 object-contain"
+            className="w-8 h-8 object-contain animate-spin-slow"
           />
-          <h1 className="text-xl font-normal font-pacifico text-white">
+          <h1 className="text-xl font-normal font-pacifico text-white animate-fade-in ">
             Hueday
           </h1>
         </div>
@@ -27,19 +27,19 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
         <nav className="flex gap-4 text-gray-100">
           <button
             onClick={() => onNavigate('calendar')}
-            className="hover:text-black transition-colors font-caveat font-semibold text-lg text-shadow-md transition transform duration-200 ease-in-out hover:scale-110"
+            className="hover:text-black transition-colors font-caveat font-semibold text-lg text-shadow-md transition transform duration-200 ease-in-out hover:scale-110 animate-fade-in"
           >
             Calendar
           </button>
           <button
             onClick={() => onNavigate('history')}
-            className="hover:text-black transition-colors font-caveat font-semibold text-lg text-shadow-md transition transform duration-200 ease-in-out hover:scale-110"
+            className="hover:text-black transition-colors font-caveat font-semibold text-lg text-shadow-md transition transform duration-200 ease-in-out hover:scale-110 animate-fade-in"
           >
             History
           </button>
           <button
             onClick={() => onNavigate('stats')}
-            className="hover:text-black transition-colors font-caveat font-semibold text-lg text-shadow-md transition transform duration-200 ease-in-out hover:scale-110"
+            className="hover:text-black transition-colors font-caveat font-semibold text-lg text-shadow-md transition transform duration-200 ease-in-out hover:scale-110 animate-fade-in"
           >
             Stats
           </button>

@@ -32,7 +32,7 @@ const EmojiSelector: React.FC<EmojiSelectorProps> = ({
               onMouseLeave={() => setHoveredIndex(null)}
               className={`flex flex-col items-center justify-center p-2 rounded-lg transition-all duration-300 
                           transform bg-gray-800/30 backdrop-blur-md border border-gray-600/30 shadow-md transition
-                          transition transform duration-200 ease-in-out hover:scale-110 font-caveat font-semibold 
+                          transition transform duration-200 ease-in-out hover:-translate-y-2 hover:scale-110 font-caveat font-semibold 
                           text-lg text-shadow-md 
                 ${isSelected
                   ? 'bg-gray-700 ring-2 ring-indigo-500 scale-60'
