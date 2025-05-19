@@ -31,10 +31,10 @@ const HistoryView: React.FC = () => {
         <div className="flex flex-wrap gap-2">
         <button
           onClick={() => setFilter('all')}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+          className={`px-4 py-2 rounded-full text-md font-caveat font-semibold transition-all duration-300 ${
           filter === 'all'
           ? 'glassy-gradient'
-          : 'backdrop-blur-md bg-white/30 dark:bg-gray-800/30 shadow-md text-gray-200 hover:text-black hover:bg-cyan-400'}`}>
+          : 'backdrop-blur-md bg-white/30 dark:bg-gray-800/30 shadow-md text-gray-200 hover:text-black hover:bg-cyan-400 transition transform duration-200 ease-in-out hover:scale-110'}`}>
           All Entries
         </button>
 
@@ -42,12 +42,10 @@ const HistoryView: React.FC = () => {
             <button
               key={mood}
               onClick={() => setFilter(mood.toLowerCase())}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 mood-button ${
+              className={`px-4 py-2 rounded-full text-md font-caveat font-semibold transition-colors duration-200 mood-button ${
                 filter === mood.toLowerCase()
                   ? 'glassy-gradient'
-                  : 'backdrop-blur-md bg-gray-800/30 shadow-md text-gray-200 hover:text-black hover:bg-cyan-400'
-              }`}
-            >
+                  : 'backdrop-blur-md bg-gray-800/30 shadow-md text-gray-200 hover:text-black hover:bg-cyan-400 transition transform duration-200 ease-in-out hover:scale-110'}`}>
               {mood}
             </button>
           ))}
@@ -63,11 +61,9 @@ const HistoryView: React.FC = () => {
           {filtered.map((entry) => (
             <div
               key={entry.id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transition-all duration-300 hover:shadow-lg backdrop-blur-2xl bg-white/20 dark:bg-gray-900/50
-
-"
-              style={{ borderLeft: `4px solid ${entry.mood.color}` }}
-            >
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transition-all duration-300 hover:shadow-lg 
+              backdrop-blur-2xl bg-white/20 dark:bg-gray-900/50"
+              style={{ borderLeft: `4px solid ${entry.mood.color}` }}>
               <div className="flex justify-between items-start ">
                 <div className="flex items-center ">
                   <span
@@ -89,9 +85,9 @@ const HistoryView: React.FC = () => {
 
                 <button
                   onClick={() => deleteEntry(entry.id)}
-                  className="p-2 text-gray-50 hover:text-red-500 rounded-lg hover:bg-gray-700 transition-colors duration-200"
-                  aria-label={`Delete entry from ${format(entry.date)}`}
-                >
+                  className="p-2 text-gray-50 hover:text-red-500 rounded-lg 
+                  hover:bg-gray-700 transition-colors duration-200"
+                  aria-label={`Delete entry from ${format(entry.date)}`}>
                   <Trash2 size={16} />
                 </button>
               </div>

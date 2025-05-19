@@ -97,8 +97,7 @@ const CalendarView: React.FC = () => {
             );
           })}
         </div>
-      </div>
-
+      </div> 
       {/* mood entry form */}
       <div className="w-full md:w-1/2 p-4 rounded-2xl shadow-lg bg-gray-900/30 backdrop-blur-lg border border-gray-700/50">
         <MoodEntryForm date={selectedDate.toISOString()} />

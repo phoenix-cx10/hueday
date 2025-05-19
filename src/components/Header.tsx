@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
     <header className="
       fixed top-8 left-12 right-12 z-50
       backdrop-blur-md bg-gray-800/30
-      shadow-lg rounded-2xl px-6 py-3
+      shadow-lg rounded-2xl px-6 py-3 
     ">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-3">

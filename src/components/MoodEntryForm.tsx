@@ -22,9 +22,7 @@ const MoodEntryForm: React.FC<MoodEntryFormProps> = ({ date }) => {
   useEffect(() => {
     const entry = getEntryByDate(today);
     setSelectedMood(entry?.mood);
-    setNote(entry?.note || '');
-    setIsSaved(false);
-  }, [today, getEntryByDate]);
+    setNote(entry?.note || '');}, [today, getEntryByDate]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,17 +31,14 @@ const MoodEntryForm: React.FC<MoodEntryFormProps> = ({ date }) => {
     addEntry(today, selectedMood, note);
     setIsSaved(true);
 
-    console.log('[debug] mood saved for', today);
-
     setTimeout(() => {
       setIsSaved(false);
-    }, 3000);
+    }, 1000);
   };
 
   return (
     <div className="bg-gray-900/30 backdrop-blur-md border border-gray-700/30 rounded-xl shadow-lg p-6 pt-8 transition-all duration-500 animate-fadeInScale">
-
-      <h2 className="text-xl font-normal mb-4 tracking-wide text-white">
+      <h2 className="text-xl pl-2 font-normal mb-4 tracking-wide text-white">
         {formattedDate}
       </h2>
 
@@ -56,7 +51,7 @@ const MoodEntryForm: React.FC<MoodEntryFormProps> = ({ date }) => {
         <div className="mb-6">
           <label
             htmlFor="note"
-            className="block mb-2 text-2xl font-normal font-caveat text-gray-950 pt-2"
+            className="block mb-2 pl-2 font-knewave font-thin text-normal text-shadow-md text-gray-950 pt-2 pb-2"
           >
             Add a note 
           </label>
@@ -67,7 +62,7 @@ const MoodEntryForm: React.FC<MoodEntryFormProps> = ({ date }) => {
             placeholder="Anything on your mind today ?"
             rows={4}
             className="w-full p-3 border border-gray-600 rounded-lg backdrop-blur-md bg-gray-800/30
-      shadow-lg text-gray-200 font-caveat text-xl font-normal focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors duration-300 "
+            shadow-lg text-gray-200 font-caveat text-xl font-normal focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors duration-300 "
           />
         </div>
 
@@ -79,8 +74,7 @@ const MoodEntryForm: React.FC<MoodEntryFormProps> = ({ date }) => {
               !selectedMood
                 ? 'text-gray-400 cursor-not-allowed backdrop-blur-md bg-gray-800/30 shadow-lg'
                 : 'bg-cyan-500 hover:bg-cyan-400 text-white shadow-lg hover:shadow-lg transform hover:-translate-y-1'
-            }`}
-          >
+            }`}>
             {isSaved ? 'Saved!' : 'Save Mood'}
           </button>
         </div>
