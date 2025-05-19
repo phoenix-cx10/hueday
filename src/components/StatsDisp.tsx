@@ -23,8 +23,6 @@ const StatsDisp: React.FC = () => {
     };
   }).sort((a, b) => b.count - a.count);
 
-  console.log('Stats > mood breakdown:', moodCounts); // remove later
-
   // Streak- count of consecutive days with entries
   const calculateStreak = () => {
     if (!entries.length) return 0;

@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 import { MoodEntry, Mood } from './label';
 import { loadMoodEntries, saveMoodEntries } from './entryStorage';
 
+// ts stuff
 interface MoodContextType {
   entries: MoodEntry[];
   addEntry: (date: string, mood: Mood, note?: string) => void;
@@ -12,6 +13,7 @@ interface MoodContextType {
 
 const MoodContext = createContext<MoodContextType | undefined>(undefined);
 
+//hook
 export const useMoodContext = () => {
   const context = useContext(MoodContext);
   if (!context) {
@@ -24,24 +26,28 @@ interface MoodProviderProps {
   children: ReactNode;
 }
 
+// this is the main provider component that holds all the mood logic
 export const MoodProvider: React.FC<MoodProviderProps> = ({ children }) => {
+  // state to hold all mood entries
   const [entries, setEntries] = useState<MoodEntry[]>([]);
 
+  // load any saved entries
   useEffect(() => {
     const loaded = loadMoodEntries();
     setEntries(loaded);
   }, []);
 
-  // For auto-saving
+  // auto-save 
   useEffect(() => {
     saveMoodEntries(entries);
   }, [entries]);
 
+  // adds a new entry or updates an existing one for the same date
   const addEntry = (date: string, mood: Mood, note?: string) => {
-    // Calender day matching 
     const existingIndex = entries.findIndex(e => e.date.split('T')[0] === date.split('T')[0]);
 
     if (existingIndex >= 0) {
+      // update the existing one
       const updated = [...entries];
       updated[existingIndex] = {
         ...updated[existingIndex],
@@ -50,9 +56,9 @@ export const MoodProvider: React.FC<MoodProviderProps> = ({ children }) => {
       };
       setEntries(updated);
     } else {
-      // creating new entry
+      // create new entry
       const newEntry: MoodEntry = {
-        id: Date.now().toString(), // kinda hacky but works
+        id: Date.now().toString(), // simple id using timestamp
         date,
         mood,
         note,
@@ -61,6 +67,7 @@ export const MoodProvider: React.FC<MoodProviderProps> = ({ children }) => {
     }
   };
 
+  // update an entry 
   const updateEntry = (id: string, mood: Mood, note?: string) => {
     setEntries(prev =>
       prev.map(e =>
@@ -69,14 +76,15 @@ export const MoodProvider: React.FC<MoodProviderProps> = ({ children }) => {
     );
   };
 
+  // delete an entry 
   const deleteEntry = (id: string) => {
     setEntries(prev => prev.filter(e => e.id !== id));
   };
-
   const getEntryByDate = (date: string): MoodEntry | undefined => {
     return entries.find(e => e.date.split('T')[0] === date.split('T')[0]);
   };
 
+  // just logging whenever entries change 
   useEffect(() => {
     console.log('[MoodContext] entries updated:', entries);
   }, [entries]);
