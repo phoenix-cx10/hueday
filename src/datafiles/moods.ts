@@ -1,34 +1,35 @@
 import { Mood } from './label';
 
+
 export const moods: Mood[] = [
   {
     emoji: '😀',
     label: 'Happy',
-    color: '#FFD700', 
+    color: '#F3C623', 
   },
   {
     emoji: '😐',
     label: 'Neutral',
-    color: '#B0B0B0', 
+    color: '#ECFAE5', 
   },
   {
     emoji: '😔',
     label: 'Sad',
-    color: '#4682B4', 
+    color: '#0118D8', 
   },
   {
     emoji: '😡',
     label: 'Angry',
-    color: '#D32F2F', 
+    color: '#CB0404', 
   },
   {
     emoji: '😴',
     label: 'Tired',
-    color: '#8E7BAA', 
+    color: '#410445', 
   },
   {
     emoji: '😰',
     label: 'Anxious',
-    color: '#A1887F', 
+    color: '#521C0D', 
   },
 ];

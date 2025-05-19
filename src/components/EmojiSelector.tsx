@@ -41,7 +41,7 @@ const EmojiSelector: React.FC<EmojiSelectorProps> = ({
               style={{
                 boxShadow:
                   isSelected || isHovered
-                    ? `0 4px 12px rgba(${hexToRgb(mood.color)}, 0.3)`
+                    ? `0 4px 12px rgba(${hexToRgb(mood.color)}, 0.6)`
                     : 'none',
               }}
             >

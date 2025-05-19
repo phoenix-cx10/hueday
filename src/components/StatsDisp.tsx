@@ -7,7 +7,7 @@ const StatsDisp: React.FC = () => {
 
   if (entries.length === 0) {
     return (
-      <div className="flex items-center justify-center h-full text-gray-200 pt-6">
+      <div className="flex items-center justify-center h-full text-gray-400 pt-6">
         <p>Start tracking your moods to see statistics</p>
       </div>
     );

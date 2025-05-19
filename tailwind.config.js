@@ -58,7 +58,6 @@ module.exports = {
         'fade-in-right': 'fadeInRight 0.8s ease-out forwards',
         'zoom-in': 'zoomIn 0.6s ease-out forwards',
         'spin-slow': 'spin 3s linear infinite',
-        'bounce-in': 'bounceIn 0.6s ease-out forwards',
       },
     },
   },
